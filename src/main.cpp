@@ -1245,8 +1245,8 @@ uint256 static GetOrphanRoot(const CBlockHeader* pblock)
     return pblock->GetHash();
 }
 
-static const int64 nStartSubsidy = 4 * COIN;
-static const int64 nMinSubsidy = 0.1 * COIN;
+static const int64 nStartSubsidy = 2 * COIN;
+//static const int64 nMinSubsidy = 0.1 * COIN;
 int64 static GetBlockValue(int nHeight, int64 nFees)
 {
     int64 nSubsidy = nStartSubsidy;
@@ -1304,10 +1304,10 @@ int64 static GetBlockValue(int nHeight, int64 nFees)
     // Inflation phase: Subsidy reaches minimum subsidy
     // Network is rewarded for transaction processing with transaction fees and
     // the inflationary subsidy
-    if (nSubsidy < nMinSubsidy)
-    {
-     nSubsidy = nMinSubsidy;
-    }
+    //if (nSubsidy < nMinSubsidy)
+    //{
+     //nSubsidy = nMinSubsidy;
+    //}
 
     return nSubsidy + nFees;
 }
